@@ -10,7 +10,6 @@ USER root
 ENV HOME /root
 ENV NODE_VER v4.*
 
-
 # setup the nvm environment
 RUN git clone https://github.com/creationix/nvm.git $HOME/.nvm
 RUN echo '\n#The Following loads nvm, and install Node.js which version is assigned to $NODE_ENV' >> $HOME/.profile
