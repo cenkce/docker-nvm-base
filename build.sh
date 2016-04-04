@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+IMAGE_NAME="nullcappone/stressmonster-nvm-base"
+
 init(){
     STATUS=$(docker-machine status)
 
@@ -14,9 +16,11 @@ init(){
             docker-machine create
     esac
 
-    log "docker machine env"
     eval $(docker-machine env)
-    check
+}
+
+start(){
+    docker run -it -v $(pwd):/srv/app $IMAGE_NAME
 }
 
 build(){

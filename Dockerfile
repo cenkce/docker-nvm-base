@@ -18,5 +18,3 @@ RUN echo 'echo "Installing node@${NODE_VER}, this may take several minutes..."' 
 RUN echo 'nvm install ${NODE_VER}' >> $HOME/.profile
 RUN echo 'nvm alias default ${NODE_VER}' >> $HOME/.profile
 RUN echo 'echo "Install node@${NODE_VER} finished."' >> $HOME/.profile
-ENTRYPOINT ["/bin/bash", "--login", "-i", "-c"]
-CMD ["bash"]
